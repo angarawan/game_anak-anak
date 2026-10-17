@@ -1,0 +1,6 @@
+{
+  "name": "Petualangan Pintar: Ayo Membaca dan Menulis!",
+  "description": "Game edukasi interaktif anak usia 4-8 tahun untuk belajar mengenal huruf, suku kata, membaca, menulis dengan jari/mouse, tebak gambar, dan susun kata.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
