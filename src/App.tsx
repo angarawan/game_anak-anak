@@ -8,6 +8,7 @@ import { Header } from './components/Header';
 import { MainMenu } from './components/MainMenu';
 import { CelebrationModal } from './components/CelebrationModal';
 import { BreakTimeModal } from './components/BreakTimeModal';
+import { PWAInstallBanner } from './components/PWAInstallBanner';
 
 // 9 Sub-games
 import { AlphabetGame } from './components/games/AlphabetGame';
@@ -304,6 +305,9 @@ export default function App() {
         onClose={() => setIsBreakModalOpen(false)}
         minutesSpent={sessionMinutes}
       />
+
+      {/* PWA Direct Mobile Install Prompt */}
+      <PWAInstallBanner />
     </div>
   );
 }

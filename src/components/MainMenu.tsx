@@ -11,7 +11,10 @@ import {
   Volume2,
   Play,
   Heart,
+  Download,
+  Smartphone,
 } from 'lucide-react';
+import { usePWAInstall } from '../hooks/usePWAInstall';
 import { GameMenu, Mascot, UserProgress } from '../types/game';
 import { soundManager } from '../utils/audio';
 import { heroBgImg } from '../data/learningData';
@@ -40,6 +43,7 @@ export const MainMenu: React.FC<MainMenuProps> = ({
   activeMascot,
   progress,
 }) => {
+  const { isInstallable, isInstalled, install } = usePWAInstall();
   const menuItems: MenuItemConfig[] = [
     {
       id: 'alphabet',
@@ -199,6 +203,24 @@ export const MainMenu: React.FC<MainMenuProps> = ({
                 <Volume2 className="w-4 h-4" />
                 <span>Sapa {activeMascot.name} 🔊</span>
               </button>
+
+              {!isInstalled && (
+                <button
+                  onClick={async () => {
+                    soundManager.playPop();
+                    if (isInstallable) {
+                      await install();
+                    } else {
+                      const headerBtn = document.querySelector('[title="Pasang Game di HP"]');
+                      if (headerBtn) (headerBtn as HTMLElement).click();
+                    }
+                  }}
+                  className="px-4 py-3 rounded-2xl bg-white hover:bg-emerald-50 text-emerald-900 font-extrabold text-sm shadow-md transition-all cursor-pointer flex items-center gap-2 active:scale-95"
+                >
+                  <Smartphone className="w-4 h-4 text-emerald-600 animate-bounce" />
+                  <span>Pasang di HP 📱</span>
+                </button>
+              )}
             </div>
           </div>
 

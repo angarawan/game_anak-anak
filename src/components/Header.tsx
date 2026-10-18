@@ -2,6 +2,7 @@ import React from 'react';
 import { Volume2, VolumeX, Sparkles, Star, Coins, Home, Clock } from 'lucide-react';
 import { GameMenu, Mascot } from '../types/game';
 import { soundManager } from '../utils/audio';
+import { PWAHeaderInstallButton } from './PWAInstallBanner';
 
 interface HeaderProps {
   currentMenu: GameMenu;
@@ -115,8 +116,10 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
         </div>
 
-        {/* Zone 3: Primary Audio Action */}
+        {/* Zone 3: Primary Actions (Install App + Sound) */}
         <div className="flex items-center gap-2 shrink-0">
+          <PWAHeaderInstallButton />
+
           <button
             onClick={() => {
               onToggleSound();

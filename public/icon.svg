@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="bookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle with safe area -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)"/>
+
+  <!-- Inner cheerful glowing border -->
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="none" stroke="#ffffff" stroke-width="8" stroke-opacity="0.4"/>
+
+  <!-- Open Story Book with shadow -->
+  <g filter="url(#shadow)">
+    <!-- Book Cover Background -->
+    <path d="M 96 170 C 150 150, 230 160, 256 185 C 282 160, 362 150, 416 170 L 416 390 C 362 370, 282 380, 256 405 C 230 380, 150 370, 96 390 Z" fill="#f59e0b"/>
+    <!-- Book Pages -->
+    <path d="M 104 160 C 155 142, 230 152, 256 176 C 282 152, 357 142, 408 160 L 408 376 C 357 358, 282 368, 256 392 C 230 368, 155 358, 104 376 Z" fill="url(#bookGrad)"/>
+    <!-- Center Spine -->
+    <line x1="256" y1="176" x2="256" y2="392" stroke="#e2e8f0" stroke-width="4"/>
+  </g>
+
+  <!-- Playful Letters A, B, C on pages -->
+  <!-- Left page: A -->
+  <text x="175" y="275" font-family="system-ui, -apple-system, sans-serif" font-size="76" font-weight="900" fill="#ef4444" text-anchor="middle">A</text>
+  <!-- Right page: B & C -->
+  <text x="310" y="245" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="900" fill="#3b82f6" text-anchor="middle">B</text>
+  <text x="355" y="325" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="900" fill="#10b981" text-anchor="middle">C</text>
+
+  <!-- Cute Pencil on top -->
+  <g transform="translate(340, 100) rotate(25)">
+    <polygon points="0,0 24,0 24,70 0,70" fill="#facc15"/>
+    <polygon points="0,70 12,94 24,70" fill="#fde047"/>
+    <polygon points="8,86 12,94 16,86" fill="#1e293b"/>
+    <rect x="0" y="-14" width="24" height="14" rx="3" fill="#f43f5e"/>
+    <rect x="0" y="-3" width="24" height="4" fill="#cbd5e1"/>
+  </g>
+
+  <!-- Cheerful Star atop the book -->
+  <path d="M 256 80 L 268 116 L 306 116 L 275 138 L 287 174 L 256 152 L 225 174 L 237 138 L 206 116 L 244 116 Z" fill="url(#starGrad)" filter="url(#shadow)"/>
+
+  <!-- Little sparkle stars -->
+  <circle cx="120" cy="110" r="10" fill="#fef08a"/>
+  <circle cx="410" cy="220" r="8" fill="#fef08a"/>
+</svg>
